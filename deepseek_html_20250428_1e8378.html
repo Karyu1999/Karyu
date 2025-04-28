@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karyu | การ์อยู่ - สถาปัตยกรรมไม้ที่เล่าเรื่องราวแห่งชีวิต</title>
+    <meta name="description" content="Karyu | การ์อยู่ - สถาปัตยกรรมไม้ที่เล่าเรื่องราวแห่งชีวิต ออกแบบบ้านไม้เฉพาะบุคคล งานรีโนเวทอาคารไม้เก่า">
+    <meta property="og:title" content="Karyu | การ์อยู่">
+    <meta property="og:description" content="สถาปัตยกรรมไม้ที่เล่าเรื่องราวแห่งชีวิต">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1580640131625-00031adfd1bc?auto=format&fit=crop&w=1950&q=80">
+    
+    <!-- Optimized Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #F5F3EF;
+            color: #40342E;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #3E2C23;
+            padding: 2rem;
+            text-align: center;
+            color: #F8F4E8;
+        }
+        
+        nav {
+            background-color: #6F4E37;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav a {
+            color: #F8F4E8;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            color: #FFD700;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        nav a:focus {
+            outline: 2px solid #FFD700;
+            outline-offset: 3px;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1580640131625-00031adfd1bc?auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 7rem 2rem;
+            text-align: center;
+            color: white;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.7rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+        
+        .hero button {
+            padding: 0.9rem 2rem;
+            font-size: 1.1rem;
+            background-color: #5C4033;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .hero button:hover {
+            background-color: #80654A;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #3E2C23;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #6F4E37;
+        }
+        
+        .section p, .section ul {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #5A4A3A;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .section li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .section li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #6F4E37;
+            font-weight: bold;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .portfolio-item {
+            background: #eee;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #E8D8C8;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            background-color: #3E2C23;
+            color: #F8F4E8;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.95rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info a {
+            color: #F8F4E8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: #FFD700;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Karyu | การ์อยู่</h1>
+    <p>สถาปัตยกรรมไม้ที่เล่าเรื่องราวแห่งชีวิต</p>
+</header>
+
+<nav>
+    <a href="#about">เกี่ยวกับเรา</a>
+    <a href="#services">บริการ</a>
+    <a href="#portfolio">ผลงาน</a>
+    <a href="#contact">ติดต่อเรา</a>
+</nav>
+
+<section class="hero">
+    <h1>สร้างชีวิตผ่านสถาปัตยกรรมไม้</h1>
+    <p>ผสานศิลป์ไม้โบราณ กับการออกแบบสมัยใหม่ เพื่อชีวิตที่ยั่งยืน</p>
+    <button onclick="location.href='#contact'">เริ่มต้นโปรเจกต์ของคุณ</button>
+</section>
+
+<section class="section" id="about">
+    <h2>เกี่ยวกับ Karyu</h2>
+    <p>Karyu คือพื้นที่แห่งแรงบันดาลใจและการออกแบบสถาปัตยกรรมไม้ที่ยืนยง เราสร้างสรรค์ผลงานจากความเคารพธรรมชาติ ศิลปะ และเรื่องราวของไม้ไทย เพื่อชีวิตที่สมดุลและงดงามอย่างแท้จริง</p>
+</section>
+
+<section class="section" id="services">
+    <h2>บริการของเรา</h2>
+    <ul>
+        <li>ออกแบบบ้านไม้เฉพาะบุคคล</li>
+        <li>ปรึกษาด้านสถาปัตยกรรมยั่งยืน</li>
+        <li>งานรีโนเวทอาคารไม้เก่า</li>
+        <li>อบรมและเวิร์คช็อปงานไม้สถาปัตยกรรม</li>
+        <li>ออกแบบเฟอร์นิเจอร์ไม้ตามสั่ง</li>
+    </ul>
+</section>
+
+<section class="section" id="portfolio">
+    <h2>ตัวอย่างผลงาน</h2>
+    <p>ผลงานการออกแบบที่ผสมผสานระหว่างเอกลักษณ์ไทยและสากล</p>
+    
+    <div class="portfolio-grid">
+        <div class="portfolio-item">บ้านไม้สไตล์ร่วมสมัย</div>
+        <div class="portfolio-item">รีโนเวทเรือนไทยโบราณ</div>
+        <div class="portfolio-item">เฟอร์นิเจอร์ไม้定制</div>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <h2>ติดต่อเรา</h2>
+    <p>สนใจเริ่มโครงการหรือต้องการคำปรึกษาเกี่ยวกับงานไม้สถาปัตยกรรม</p>
+    
+    <div class="contact-info">
+        <a href="mailto:hello@karyu.com">Email: hello@karyu.com</a>
+        <a href="https://line.me/ti/p/~@karyu">Line: @karyu</a>
+        <a href="https://facebook.com/karyuarchitecture">Facebook: Karyu Architecture</a>
+        <a href="tel:+6621234567">โทร: 02-123-4567</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Karyu | การ์อยู่. งานไม้ที่มีชีวิต สร้างเพื่ออนาคต.</p>
+    <p style="margin-top: 0.5rem;">สร้างด้วยใจ เพื่อทุกการอยู่อาศัย</p>
+</footer>
+
+</body>
+</html>
